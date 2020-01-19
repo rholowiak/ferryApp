@@ -1,9 +1,11 @@
 package pl.exercise.ferry.singleton;
 
 import org.w3c.dom.ls.LSOutput;
+import pl.exercise.ferry.screen.MainScreen;
 import pl.exercise.ferry.ticket.BusTicket;
 import pl.exercise.ferry.ticket.Ticket;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,12 @@ public class Singleton {
             }
 
             return sb.toString();
+        }
+        public void clear() throws IOException {
+            this.totalAmount = 0;
+            list.clear();
+            MainScreen mainScreen = new MainScreen();
+            mainScreen.interact();
         }
     }
 

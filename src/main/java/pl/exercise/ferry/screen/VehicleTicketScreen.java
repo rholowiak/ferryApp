@@ -4,13 +4,14 @@ import pl.exercise.ferry.singleton.Singleton;
 import pl.exercise.ferry.ticket.*;
 import pl.exercise.ferry.vehicle.VehicleType;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class VehicleTicketScreen implements Screen {
     private final Scanner in = new Scanner(System.in);
 
     @Override
-    public void interact() {
+    public void interact() throws IOException {
         System.out.println("Podaj typ pojazdu:");
         System.out.println("1. Car");
         System.out.println("2. Bike");

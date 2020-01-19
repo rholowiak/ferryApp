@@ -6,12 +6,13 @@ import pl.exercise.ferry.ticket.ChildTicket;
 import pl.exercise.ferry.ticket.SeniorTicket;
 import pl.exercise.ferry.ticket.YoungTicket;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PersonTicketScreen implements Screen {
     private final Scanner in = new Scanner(System.in);
     @Override
-    public void interact() {
+    public void interact() throws IOException {
         System.out.println("Podaj wiek dla osoby, dla której chcesz kupić bilet:");
         int age = in.nextInt();
         if(age < 3){

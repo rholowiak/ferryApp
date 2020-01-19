@@ -2,6 +2,7 @@ package pl.exercise.ferry.screen;
 
 import com.sun.tools.javac.Main;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TicketScreen implements Screen{
@@ -9,7 +10,7 @@ public class TicketScreen implements Screen{
     private final Scanner in = new Scanner(System.in);
 
     @Override
-    public void interact() {
+    public void interact()throws IOException {
         System.out.println("Wybierz bilet, który chcesz kupić:");
         System.out.println("1. Osoba");
         System.out.println("2. Pojazd");

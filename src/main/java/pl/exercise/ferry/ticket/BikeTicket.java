@@ -18,4 +18,5 @@ public class BikeTicket extends VehicleTicket {
     public String toString() {
         return "| Vehicle-Bike " + getPrice() + " PLN";
     }
+
 }

@@ -1,0 +1,10 @@
+Ilosc zakupionych biletów: 3
+| Vehicle-Car 20 PLN	| Vehicle-Bike 10 PLN	| Vehicle-Bus 45 PLN	
+Ilosc zakupionych biletów: 3 
+| Vehicle-Car 20 PLN	| Vehicle-Bike 10 PLN	| Person-Adult 10 PLN	
+Ilosc zakupionych biletów: 6 
+| Vehicle-Car 20 PLN	| Vehicle-Bike 10 PLN	| Person-Adult 10 PLN	| Person-Child 0 PLN	| Person-Young 5 PLN	| Vehicle-Truck 240 PLN	
+Ilosc zakupionych biletów: 1 
+| Vehicle-Car 20 PLN	
+Ilosc zakupionych biletów: 2 
+| Vehicle-Car 20 PLN	| Vehicle-Bike 10 PLN	
