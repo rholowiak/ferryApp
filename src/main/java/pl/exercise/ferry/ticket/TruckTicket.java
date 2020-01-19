@@ -1,5 +1,6 @@
 package pl.exercise.ferry.ticket;
 
+import pl.exercise.ferry.singleton.Singleton;
 import pl.exercise.ferry.vehicle.VehicleType;
 
 import java.math.BigDecimal;
@@ -19,6 +20,6 @@ public class TruckTicket extends VehicleTicket {
 
     @Override
     public String toString() {
-        return "TruckTicket";
+        return "| Vehicle-Truck " + getPrice() + " PLN";
     }
 }
