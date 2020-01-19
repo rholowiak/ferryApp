@@ -3,7 +3,7 @@ package pl.exercise.ferry.ticket;
 import java.math.BigDecimal;
 import pl.exercise.ferry.vehicle.VehicleType;
 
-public abstract class VehicleTicket implements Ticket {
+public abstract class VehicleTicket extends AbstractTicket {
 
   private final VehicleType vehicleType;
   private final String owner;
@@ -12,10 +12,4 @@ public abstract class VehicleTicket implements Ticket {
     this.vehicleType = vehicleType;
     this.owner = owner;
   }
-
-  @Override
-  public BigDecimal getPrice() {
-    return BigDecimal.ZERO;
-  }
-
 }
