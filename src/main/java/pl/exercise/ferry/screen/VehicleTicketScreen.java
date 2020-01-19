@@ -1,8 +1,7 @@
 package pl.exercise.ferry.screen;
 
 import pl.exercise.ferry.singleton.Singleton;
-import pl.exercise.ferry.ticket.BusTicket;
-import pl.exercise.ferry.ticket.TruckTicket;
+import pl.exercise.ferry.ticket.*;
 import pl.exercise.ferry.vehicle.VehicleType;
 
 import java.util.Scanner;
@@ -23,10 +22,14 @@ public class VehicleTicketScreen implements Screen {
             case 1:
                 System.out.println("Cena biletu 20 PLN");
                 Singleton.INSTANCE.addAmount(20);
+                CarTicket carTicket = new CarTicket(VehicleType.CAR,"unknown");
+                Singleton.INSTANCE.addToList(carTicket);
                 break;
             case 2:
                 System.out.println("Cena biletu 10 PLN");
                 Singleton.INSTANCE.addAmount(10);
+                BikeTicket bikeTicket = new BikeTicket(VehicleType.BIKE, "unknown");
+                Singleton.INSTANCE.addToList(bikeTicket);
                 break;
             case 3:
                 System.out.println("Podaj długość pojazdu w metrach:");
@@ -34,6 +37,7 @@ public class VehicleTicketScreen implements Screen {
                 BusTicket busTicket = new BusTicket(VehicleType.BUS, vehicleLong);
                 System.out.println("Cena biletu " + busTicket.getPrice() + " PLN");
                 Singleton.INSTANCE.addAmount(vehicleLong * 5);
+                Singleton.INSTANCE.addToList(busTicket);
                 break;
             case 4:
                 System.out.println("Podaj ciężar pojazdu w tonach:");
@@ -41,6 +45,7 @@ public class VehicleTicketScreen implements Screen {
                 TruckTicket truckTicket = new TruckTicket(VehicleType.TRUCK, vehicleWeight);
                 System.out.println("Cena biletu " + truckTicket.getPrice() + " PLN");
                 Singleton.INSTANCE.addAmount(vehicleWeight * 10);
+                Singleton.INSTANCE.addToList(truckTicket);
                 break;
             default:
                 VehicleTicketScreen vehicleTicketScreen = new VehicleTicketScreen();

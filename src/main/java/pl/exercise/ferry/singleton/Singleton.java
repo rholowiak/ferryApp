@@ -1,5 +1,6 @@
 package pl.exercise.ferry.singleton;
 
+import org.w3c.dom.ls.LSOutput;
 import pl.exercise.ferry.ticket.BusTicket;
 import pl.exercise.ferry.ticket.Ticket;
 
@@ -22,7 +23,25 @@ public class Singleton {
         public double getTotalAmount() {
             return totalAmount;
         }
-        //dodać metody dodające tickety do listy
 
+        // metoda dodająca tickety do listy
+        public void addToList(Ticket ticket){
+            list.add(ticket);
+        }
+
+        public int numberOfTicketsPurchased (){
+            return list.size();
+        }
+
+        public String listOfTickets() {
+            StringBuilder sb = new StringBuilder();
+
+            for (Ticket ticket : list) {
+                sb.append(ticket);
+                sb.append("\t");
+            }
+
+            return sb.toString();
+        }
     }
 

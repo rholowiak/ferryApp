@@ -10,6 +10,8 @@ public class MainScreen implements Screen {
 
   public void interact() {
     System.out.println("Total amount:" + Singleton.INSTANCE.getTotalAmount() + " PLN");
+    System.out.println("Ilosc zakupionych biletów: " + Singleton.INSTANCE.numberOfTicketsPurchased());
+    System.out.println(Singleton.INSTANCE.listOfTickets());
     System.out.println("Witamy w systemie zakupów biletów, wybierz akcję:");
     System.out.println("1. Kup bilet");
     String firstResponse = in.nextLine();

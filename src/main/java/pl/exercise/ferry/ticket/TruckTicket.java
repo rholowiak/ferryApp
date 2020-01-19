@@ -16,4 +16,9 @@ public class TruckTicket extends VehicleTicket {
     public BigDecimal getPrice() {
         return new BigDecimal(10).multiply(new BigDecimal(vehicleWeight));
     }
+
+    @Override
+    public String toString() {
+        return "TruckTicket";
+    }
 }

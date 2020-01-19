@@ -16,4 +16,9 @@ public class BusTicket extends VehicleTicket {
     public BigDecimal getPrice() {
         return new BigDecimal(5).multiply(new BigDecimal(vehicleLong));
     }
+
+    @Override
+    public String toString() {
+        return "BusTicket";
+    }
 }
