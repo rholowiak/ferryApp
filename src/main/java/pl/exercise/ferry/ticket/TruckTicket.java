@@ -20,6 +20,6 @@ public class TruckTicket extends VehicleTicket {
 
     @Override
     public String toString() {
-        return "| Vehicle-Truck " + getPrice() + " PLN";
+        return "Vehicle-Truck," + vehicleWeight + ";";
     }
 }

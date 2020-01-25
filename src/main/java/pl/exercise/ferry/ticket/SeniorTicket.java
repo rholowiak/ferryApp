@@ -14,6 +14,6 @@ public class SeniorTicket extends PersonTicket {
 
     @Override
     public String toString() {
-        return "| Person-Senior " + getPrice() + " PLN";
+        return "Person-Senior;";
     }
 }

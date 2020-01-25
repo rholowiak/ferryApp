@@ -22,31 +22,34 @@ public class VehicleTicketScreen implements Screen {
         switch (vehicleType){
             case 1:
                 System.out.println("Cena biletu 20 PLN");
-                Singleton.INSTANCE.addAmount(20);
                 CarTicket carTicket = new CarTicket(VehicleType.CAR,"unknown");
                 Singleton.INSTANCE.addToList(carTicket);
+                Singleton.INSTANCE.addAmount(carTicket.getPrice().doubleValue());
                 break;
             case 2:
                 System.out.println("Cena biletu 10 PLN");
-                Singleton.INSTANCE.addAmount(10);
                 BikeTicket bikeTicket = new BikeTicket(VehicleType.BIKE, "unknown");
                 Singleton.INSTANCE.addToList(bikeTicket);
+                Singleton.INSTANCE.addAmount(bikeTicket.getPrice().doubleValue());
                 break;
             case 3:
                 System.out.println("Podaj długość pojazdu w metrach:");
                 double vehicleLong = in.nextDouble();
                 BusTicket busTicket = new BusTicket(VehicleType.BUS, vehicleLong);
                 System.out.println("Cena biletu " + busTicket.getPrice() + " PLN");
-                Singleton.INSTANCE.addAmount(vehicleLong * 5);
                 Singleton.INSTANCE.addToList(busTicket);
+//                Singleton.INSTANCE.addAmount(vehicleLong * 5);
+                Singleton.INSTANCE.addAmount(busTicket.getPrice().doubleValue());
                 break;
             case 4:
                 System.out.println("Podaj ciężar pojazdu w tonach:");
                 double vehicleWeight = in.nextDouble();
                 TruckTicket truckTicket = new TruckTicket(VehicleType.TRUCK, vehicleWeight);
                 System.out.println("Cena biletu " + truckTicket.getPrice() + " PLN");
-                Singleton.INSTANCE.addAmount(vehicleWeight * 10);
                 Singleton.INSTANCE.addToList(truckTicket);
+//                Singleton.INSTANCE.addAmount(vehicleWeight * 10);
+                Singleton.INSTANCE.addAmount(truckTicket.getPrice().doubleValue());
+
                 break;
             default:
                 VehicleTicketScreen vehicleTicketScreen = new VehicleTicketScreen();

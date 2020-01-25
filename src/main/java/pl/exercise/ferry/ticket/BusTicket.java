@@ -19,6 +19,6 @@ public class BusTicket extends VehicleTicket {
 
     @Override
     public String toString() {
-        return "| Vehicle-Bus " + getPrice() + " PLN";
+        return "Vehicle-Bus," + vehicleLong + ";";
     }
 }

@@ -17,25 +17,25 @@ public class PersonTicketScreen implements Screen {
         int age = in.nextInt();
         if(age < 3){
             System.out.println("Cena biletu 0 PLN");
-            Singleton.INSTANCE.addAmount(0);
             ChildTicket childTicket = new ChildTicket("unknown");
+            Singleton.INSTANCE.addAmount(childTicket.getPrice().doubleValue());
             Singleton.INSTANCE.addToList(childTicket);
         }else if(age <18){
             System.out.println("Cena biletu 5 PLN");
-            Singleton.INSTANCE.addAmount(5);
             YoungTicket youngTicket = new YoungTicket("unknown");
+            Singleton.INSTANCE.addAmount(youngTicket.getPrice().doubleValue());
             Singleton.INSTANCE.addToList(youngTicket);
 
         }else if(age < 70){
             System.out.println("Cena biletu 10 PLN");
-            Singleton.INSTANCE.addAmount(10);
             AdultTicket adultTicket = new AdultTicket("unknown");
+            Singleton.INSTANCE.addAmount(adultTicket.getPrice().doubleValue());
             Singleton.INSTANCE.addToList(adultTicket);
 
         }else{
             System.out.println("Cena biletu 5 PLN");
-            Singleton.INSTANCE.addAmount(5);
             SeniorTicket seniorTicket = new SeniorTicket("unknown");
+            Singleton.INSTANCE.addAmount(seniorTicket.getPrice().doubleValue());
             Singleton.INSTANCE.addToList(seniorTicket);
 
         }

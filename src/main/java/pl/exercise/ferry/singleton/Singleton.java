@@ -12,6 +12,7 @@ import java.util.List;
 public class Singleton {
         public static final Singleton INSTANCE = new Singleton();
         private double totalAmount = 0;
+        private int entry = 0;
 
         List<Ticket> list = new ArrayList<Ticket>();
 
@@ -25,6 +26,7 @@ public class Singleton {
         public double getTotalAmount() {
             return totalAmount;
         }
+        public int getEntry(){return entry;}
 
         // metoda dodająca tickety do listy
         public void addToList(Ticket ticket){
@@ -40,7 +42,6 @@ public class Singleton {
 
             for (Ticket ticket : list) {
                 sb.append(ticket);
-                sb.append("\t");
             }
 
             return sb.toString();
@@ -48,6 +49,7 @@ public class Singleton {
         public void clear() throws IOException {
             this.totalAmount = 0;
             list.clear();
+            this.entry += 1;
             MainScreen mainScreen = new MainScreen();
             mainScreen.interact();
         }

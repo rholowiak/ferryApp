@@ -14,6 +14,6 @@ public class ChildTicket extends PersonTicket {
 
     @Override
     public String toString() {
-        return "| Person-Child " + getPrice() + " PLN";
+        return "Person-Child;";
     }
 }
