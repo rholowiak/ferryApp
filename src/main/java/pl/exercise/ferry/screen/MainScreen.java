@@ -1,5 +1,6 @@
 package pl.exercise.ferry.screen;
 
+import pl.exercise.ferry.localDateTime.LocalDateTimeFormatter;
 import pl.exercise.ferry.singleton.Singleton;
 import pl.exercise.ferry.ticket.*;
 import pl.exercise.ferry.vehicle.VehicleType;
@@ -9,6 +10,7 @@ import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -30,13 +32,16 @@ public class MainScreen implements Screen {
     System.out.println("1. Kup bilet");
     System.out.println("2. Zapisz wybór transakcji do pliku bilety");
     System.out.println("3. Przywróć poprzednio zapisaną sesję");
+
     String firstResponse = in.nextLine();
+
+
     if ("1".equalsIgnoreCase(firstResponse)) {
       TicketScreen ticketScreen = new TicketScreen();
       ticketScreen.interact();
     }else if("2".equalsIgnoreCase(firstResponse)){
       FileWriter fileWriter =
-              new FileWriter("D:\\JAVA source codes\\ferryApp\\ferryTickets\\ticketNumber " + Singleton.INSTANCE.getEntry() + ".txt",false);
+              new FileWriter("D:\\JAVA source codes\\ferryApp\\ferryTickets\\ticketCreated on " + LocalDateTimeFormatter.getDate() + ".txt",false);
       PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println(Singleton.INSTANCE.listOfTickets());// prints a string and then terminates the line
         printWriter.close();
@@ -50,7 +55,9 @@ public class MainScreen implements Screen {
         listOfPathToTicket = walk.filter(Files::isRegularFile)
                 .map(x -> x.toString()).collect(Collectors.toList());
 
-        listOfPathToTicket.forEach(System.out::println);
+        for (int i = 0; i < listOfPathToTicket.size(); i++) {
+          System.out.println(i + ". " + listOfPathToTicket.get(i));
+        }
 
       } catch (IOException e) {
         e.printStackTrace();
